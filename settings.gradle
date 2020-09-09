@@ -1,3 +1,4 @@
+include ':shoppinglist'
 include ':user:profile'
 include ':user:auth:provider'
 include ':user:auth:common'
