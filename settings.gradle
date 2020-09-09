@@ -1,0 +1,13 @@
+include ':data:source:common'
+include ':utilities:databinding'
+include ':data:source:remote'
+include ':data:source:local'
+include ':data:models'
+include ':utilities:viewext'
+include ':utilities:ui'
+include ':tests:common'
+include ':tests:ui'
+include ':tests:unit'
+include ':common'
+include ':app'
+rootProject.name = "Shopping Assistant"
