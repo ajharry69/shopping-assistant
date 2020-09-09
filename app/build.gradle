@@ -74,6 +74,7 @@ android {
         pickFirst 'META-INF/AL2.0'
         pickFirst 'META-INF/LGPL2.1'
     }
+    dynamicFeatures = [':user:auth:common', ':user:profile']
 }
 
 configurations.all {
