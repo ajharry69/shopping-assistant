@@ -16,6 +16,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
+        buildConfigField "int", "DATABASE_VERSION", (project.findProperty('DB_VERSION') ?: 1)
+        buildConfigField "String", "DATABASE_NAME", '"' + (project.findProperty('DB_NAME') ?: xently.db) + '"'
+
         kapt {
             arguments {
                 arg("room.schemaLocation", "$projectDir/db/schemas/")

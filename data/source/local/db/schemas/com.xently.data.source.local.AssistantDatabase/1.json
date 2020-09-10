@@ -2,11 +2,43 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4d73842c328765225238fa768d68054d",
+    "identityHash": "8194c0bccd1a7183a5661e1f7bfd561f",
     "entities": [
       {
+        "tableName": "auth_tokens",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`access` TEXT NOT NULL, `refresh` TEXT NOT NULL, `id` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "access",
+            "columnName": "access",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "refresh",
+            "columnName": "refresh",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "User",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`username` TEXT NOT NULL, `email` TEXT, `firstName` TEXT, `lastName` TEXT, `id` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`username` TEXT NOT NULL, `email` TEXT, `firstName` TEXT, `lastName` TEXT, `provider` TEXT NOT NULL, `photoUrl` TEXT, `isVerified` INTEGER NOT NULL, `id` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "username",
@@ -33,41 +65,27 @@
             "notNull": false
           },
           {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "columnNames": [
-            "id"
-          ],
-          "autoGenerate": false
-        },
-        "indices": [],
-        "foreignKeys": []
-      },
-      {
-        "tableName": "Token",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `access` TEXT NOT NULL, `refresh` TEXT NOT NULL, PRIMARY KEY(`id`))",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "access",
-            "columnName": "access",
+            "fieldPath": "provider",
+            "columnName": "provider",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "refresh",
-            "columnName": "refresh",
+            "fieldPath": "photoUrl",
+            "columnName": "photoUrl",
             "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isVerified",
+            "columnName": "isVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -84,7 +102,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4d73842c328765225238fa768d68054d')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8194c0bccd1a7183a5661e1f7bfd561f')"
     ]
   }
 }

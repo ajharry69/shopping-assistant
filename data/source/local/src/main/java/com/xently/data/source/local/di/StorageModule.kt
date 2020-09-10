@@ -3,6 +3,7 @@ package com.xently.data.source.local.di
 import android.content.Context
 import androidx.room.Room
 import com.xently.data.source.local.AssistantDatabase
+import com.xently.data.source.local.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +21,7 @@ object StorageModule {
         return Room.databaseBuilder(
             context.applicationContext,
             AssistantDatabase::class.java,
-            "assistant.db"
+            BuildConfig.DATABASE_NAME
         ).fallbackToDestructiveMigration().build()
     }
 }

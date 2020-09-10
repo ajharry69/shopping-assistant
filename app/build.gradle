@@ -74,7 +74,7 @@ android {
         pickFirst 'META-INF/AL2.0'
         pickFirst 'META-INF/LGPL2.1'
     }
-    dynamicFeatures = [':user:auth:common', ':user:profile']
+//    dynamicFeatures = [':user:auth:common', ':user:profile']
 }
 
 configurations.all {
@@ -84,6 +84,8 @@ configurations.all {
 
 dependencies {
     implementation project(path: ':common')
+    implementation project(path: ':user:common')
+    implementation project(path: ':user:auth:provider')
     implementation project(path: ':data:models')
     implementation project(path: ':data:source:local')
     implementation project(path: ':data:source:remote')
@@ -100,6 +102,7 @@ dependencies {
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
     // Glide
     kapt "com.github.bumptech.glide:compiler:$glide_version"

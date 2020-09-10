@@ -7,5 +7,7 @@ enum class AuthScheme(val value: String) {
     HOBA("Hoba"),
     MUTUAL("Mutual"),
     NEGOTIATE("Negotiation"),
-    OAUTH("OAuth"),
+    OAUTH("OAuth");
+
+    override fun toString(): String = value
 }
