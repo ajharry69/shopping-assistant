@@ -74,7 +74,10 @@ android {
         pickFirst 'META-INF/AL2.0'
         pickFirst 'META-INF/LGPL2.1'
     }
-//    dynamicFeatures = [':user:auth:common', ':user:profile']
+    dynamicFeatures = [
+            ':user:auth:common',
+            ':user:profile',
+    ]
 }
 
 configurations.all {
@@ -83,21 +86,18 @@ configurations.all {
 }
 
 dependencies {
-    implementation project(path: ':common')
+    api project(path: ':common')
     implementation project(path: ':user:common')
     implementation project(path: ':user:auth:provider')
-    implementation project(path: ':data:models')
-    implementation project(path: ':data:source:local')
-    implementation project(path: ':data:source:remote')
-    implementation project(path: ':utilities:databinding')
+    api project(path: ':data:models')
+    api project(path: ':data:source:local')
+    api project(path: ':data:source:remote')
+    api project(path: ':utilities:databinding')
 
     // Hilt-DI
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     kapt "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
-
-    // Room
-    kapt "androidx.room:room-compiler:$room_version"
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
