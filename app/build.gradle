@@ -17,7 +17,7 @@ android {
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
 
-        testInstrumentationRunner "com.xently.news.NewsTestRunner"
+        testInstrumentationRunner "com.xently.news.AssistantTestRunner"
     }
 
     buildTypes {
