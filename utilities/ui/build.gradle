@@ -1,4 +1,17 @@
 apply plugin: 'com.android.library'
+/*apply plugin: 'com.novoda.bintray-release' // must be applied after your artifact generating plugin (eg. java / com.android.library)
+
+publish {
+    repoName = 'xently-android-utils'
+    bintrayKey = bintray_key
+    bintrayUser = bintray_username
+    userOrg = bintray_org
+    groupId = 'com.xently.utils'
+    artifactId = 'ui'
+    publishVersion = library_version_name
+    desc = 'Oh hi, this is a nice description for a project, right?'
+    website = 'https://github.com/ajharry69/news'
+}*/
 
 android {
     compileSdkVersion sdk_version

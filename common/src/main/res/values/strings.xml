@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Shopping Assistant</string>
+    <string name="app_website">https://xently.com/</string>
     <string name="required_field">required field</string>
     <string name="invalid_number">invalid number</string>
     <string name="value_below_threshold">value must be greater than %1$d</string>

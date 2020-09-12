@@ -27,6 +27,7 @@ android {
 
 dependencies {
     api project(path: ':common')
+    api project(path: ':utilities:databinding')
     api project(path: ':data:models')
     api project(path: ':data:source:local')
     api project(path: ':data:source:remote')

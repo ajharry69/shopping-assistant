@@ -120,3 +120,6 @@ dependencies {
         exclude group: 'androidx.test', module: 'core'
     }
 }
+if (project.file('google-services.json').exists()) {
+    apply plugin: 'com.google.gms.google-services'
+}

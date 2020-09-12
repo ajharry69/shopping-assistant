@@ -5,6 +5,7 @@ import android.view.MenuItem;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -18,7 +19,7 @@ public class Fragment extends androidx.fragment.app.Fragment {
         super();
     }
 
-    public Fragment(int contentLayoutId) {
+    public Fragment(@LayoutRes int contentLayoutId) {
         super(contentLayoutId);
     }
 

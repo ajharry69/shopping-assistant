@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_in">Sign-In</string>
+    <string name="sign_in_with_email">Sign in with email</string>
+    <string name="terms_privacy_footer"><![CDATA[By continuing you are indicating that you accept our <a href="%1$s/docs/tos.html">Terms of Service</a> and <a href="%1$s/docs/privacy-policy.html">Privacy Policy</a>.]]></string>
+</resources>

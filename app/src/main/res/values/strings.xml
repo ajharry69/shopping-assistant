@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Shopping Assistant</string>
     <string name="title_common">authentication</string>
     <string name="title_profile">user-profile</string>
 </resources>

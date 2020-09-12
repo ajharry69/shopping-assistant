@@ -1,8 +1,11 @@
 package com.xently.utilities.databinding
 
 import android.graphics.drawable.Drawable
+import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -34,4 +37,15 @@ fun setImageFromUrl(view: ImageView, url: String?, placeholder: Drawable?) {
         .centerCrop()
         .placeholder(placeholder)
         .into(view)
+}
+
+@BindingAdapter("renderHtml")
+fun bindRenderHtml(view: TextView, description: String?) {
+    with(view) {
+        if (description != null) {
+            linksClickable = true
+            text = HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT)
+            movementMethod = LinkMovementMethod.getInstance()
+        } else text = description
+    }
 }

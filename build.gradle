@@ -54,6 +54,17 @@ buildscript {
         library_version_code = 1
         library_version_name = '1.0.0'
         library_min_sdk = 19
+
+        // Bintray utilities
+        Properties properties = new Properties()
+        try {
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        } catch (Exception ignored) {
+        }
+
+        bintray_org = properties.getProperty('BINTRAY_ORG')
+        bintray_key = properties.getProperty('BINTRAY_API_KEY')
+        bintray_username = properties.getProperty('BINTRAY_USERNAME')
     }
     repositories {
         google()
@@ -64,6 +75,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath 'com.google.gms:google-services:4.3.3'
+        // classpath 'com.novoda:bintray-release:0.9.2'
     }
 }
 
