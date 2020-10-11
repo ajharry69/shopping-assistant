@@ -14,11 +14,12 @@ import com.google.android.material.snackbar.Snackbar
 @JvmOverloads
 fun showSnackBar(
     view: View,
-    message: String,
+    message: String?,
     duration: Int = Snackbar.LENGTH_SHORT,
     actionButtonText: String? = null,
-    actionButtonClick: ((snackBar: Snackbar) -> Unit)? = null
-): Snackbar {
+    actionButtonClick: ((snackBar: Snackbar) -> Unit)? = null,
+): Snackbar? {
+    if (message.isNullOrBlank()) return null
     val snackbar = Snackbar.make(view, message, duration)
     with(snackbar) {
 //        setActionTextColor(ContextCompat.getColor(context, R.color.secondaryLightColor))
@@ -40,15 +41,9 @@ fun showSnackBar(
     @StringRes message: Int,
     duration: Int = Snackbar.LENGTH_SHORT,
     actionButtonText: String? = null,
-    actionButtonClick: ((snackBar: Snackbar) -> Unit)? = null
-): Snackbar {
-    val snackbar = Snackbar.make(view, message, duration)
-    with(snackbar) {
-        if (actionButtonText != null) setAction(actionButtonText) {
-            actionButtonClick?.invoke(this)
-        }
-        if (!isShownOrQueued) show()
-    }
-
-    return snackbar
-}
+    actionButtonClick: ((snackBar: Snackbar) -> Unit)? = null,
+) = showSnackBar(view,
+    view.context.getString(message),
+    duration,
+    actionButtonText,
+    actionButtonClick)

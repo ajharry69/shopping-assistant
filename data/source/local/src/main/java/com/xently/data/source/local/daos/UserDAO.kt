@@ -17,4 +17,7 @@ interface UserDAO {
     @Transaction
     @Query("SELECT * FROM user WHERE id = :id")
     fun getUserWithToken(id: Long = DEFAULT_USER_ID): Flow<UserWithToken?>
+
+    @Query("DELETE FROM user")
+    suspend fun removeUser()
 }

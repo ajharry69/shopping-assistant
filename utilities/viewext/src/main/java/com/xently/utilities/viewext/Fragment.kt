@@ -13,12 +13,12 @@ fun Fragment.hideKeyboard() = hideKeyboard(view)
 
 @JvmOverloads
 fun Fragment.showSnackBar(
-    message: String,
+    message: String?,
     duration: Int = Snackbar.LENGTH_SHORT, actionButtonText: String? = null,
     actionButtonClick: ((snackBar: Snackbar) -> Unit)? = null
 ): Snackbar? = try {
     showSnackBar(requireView(), message, duration, actionButtonText, actionButtonClick)
-} catch (ex: Exception) {
+} catch (ex: IllegalStateException) {
     null
 }
 
@@ -29,7 +29,7 @@ fun Fragment.showSnackBar(
     actionButtonClick: ((snackBar: Snackbar) -> Unit)? = null
 ): Snackbar? = try {
     showSnackBar(requireView(), message, duration, actionButtonText, actionButtonClick)
-} catch (ex: Exception) {
+} catch (ex: IllegalStateException) {
     null
 }
 

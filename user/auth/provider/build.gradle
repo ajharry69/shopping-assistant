@@ -8,14 +8,16 @@ android {
     buildToolsVersion build_tools_version
 
     defaultConfig {
-        minSdkVersion library_min_sdk
+        minSdkVersion min_sdk_version
         targetSdkVersion sdk_version
-        versionCode library_version_code
-        versionName library_version_name
+        versionCode version_code
+        versionName version_name
         vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "String", "GOOGLE_AUTH_SERVER_CLIENT_ID", '"' + google_auth_server_client_id + '"'
     }
 
     buildTypes {
@@ -27,6 +29,19 @@ android {
 
     buildFeatures {
         dataBinding true
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            jvmTarget = jvm_target_version
+            freeCompilerArgs += [
+                    "-Xuse-experimental=kotlin.Experimental",
+                    '-Xopt-in=kotlin.time.ExperimentalTime',
+                    '-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
+                    '-Xopt-in=kotlinx.coroutines.FlowPreview',
+                    '-Xopt-in=androidx.paging.ExperimentalPagingApi',
+            ]
+        }
     }
 
     compileOptions {

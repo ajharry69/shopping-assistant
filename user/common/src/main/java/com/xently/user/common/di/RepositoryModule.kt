@@ -1,9 +1,11 @@
 package com.xently.user.common.di
 
+import android.content.SharedPreferences
+import com.xently.common.di.qualifiers.UnencryptedSharedPreference
 import com.xently.common.di.qualifiers.coroutines.IODispatcher
 import com.xently.user.common.di.qualifiers.LocalUserDataSource
 import com.xently.user.common.di.qualifiers.RemoteUserDataSource
-import com.xently.user.common.repository.IUserRepository
+import com.xently.user.common.repository.AbstractUserRepository
 import com.xently.user.common.repository.UserRepository
 import com.xently.user.common.source.IUserDataSource
 import dagger.Module
@@ -23,6 +25,8 @@ object RepositoryModule {
         local: IUserDataSource,
         @RemoteUserDataSource
         remote: IUserDataSource,
+        @UnencryptedSharedPreference
+        preference: SharedPreferences,
         @IODispatcher ioDispatcher: CoroutineDispatcher,
-    ): IUserRepository = UserRepository(local, remote, ioDispatcher)
+    ): AbstractUserRepository = UserRepository(local, remote, preference, ioDispatcher)
 }

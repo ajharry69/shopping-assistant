@@ -39,7 +39,7 @@ data class User(
     enum class AuthProvider { GOOGLE, EMAIL, }
 }
 
-data class UserWithPassword(val user: User, val password: String)
+data class UserWithPassword(val user: User, val password: String = "")
 
 data class UserWithPhoto(val user: User, val photo: Uri) {
     constructor(user: User, photo: File) : this(user, Uri.fromFile(photo))
