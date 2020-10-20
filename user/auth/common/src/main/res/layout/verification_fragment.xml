@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.verification.VerificationFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            style="@style/Widget.Xently.AppBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layout_constraintBottom_toTopOf="@id/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.Xently.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/verification">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/account_verification" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/screen_edge_margin"
+            android:autoLink="all"
+            android:linksClickable="true"
+            app:layout_constraintBottom_toTopOf="@id/code_entries"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar"
+            tools:targetApi="lollipop"
+            tools:text="account verification header description" />
+
+        <LinearLayout
+            android:id="@+id/code_entries"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="6"
+            app:layout_constraintBottom_toTopOf="@id/verify"
+            app:layout_constraintEnd_toEndOf="@id/description"
+            app:layout_constraintStart_toStartOf="@id/description"
+            app:layout_constraintTop_toBottomOf="@id/description">
+
+            <EditText
+                android:id="@+id/c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/code_entry_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/code_entry_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/c3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/code_entry_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/c4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/code_entry_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/code_entry_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/c6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/code_entry_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                tools:targetApi="o" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/verify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/verify"
+            app:layout_constraintEnd_toEndOf="@id/code_entries"
+            app:layout_constraintTop_toBottomOf="@id/code_entries" />
+
+        <include
+            android:id="@+id/timeout_counter"
+            layout="@layout/timeout_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/verify"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verify" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
