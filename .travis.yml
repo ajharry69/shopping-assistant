@@ -1,0 +1,25 @@
+language: android
+dist: trusty
+#env:
+#  global:
+#    - secure: szD2GFDyNrEsDGiT8OfTdpWy+KQtHBgcd7hJCrpRr9tFaUdcfFWoFFVyBLutWPU2g1C7YRMC0RH+fK61Jx8dn5nr1xvPJ0Zn7c0n5j02dqE+SXqiedI9EE8Tkhc0z0GgPjAKifnxKgL4ydjbUrGLwNpVpMcRdqNE3DO/nS/IYJbI5nOlqPm7V859wQTpSANgkY+AkrBhzw7A719BnnsBUsQwQ8YYqwSfGLE7XypC0Io+jfms2SIYJibYl02u2AliL3+QWHVXi1EIYvpdaT/c59hvyZOae5OM31cD+BG00r4tDnJlmxXOTQC1MI4IAJdEvnoCoG6pHWG8xg9ANtjSoo4A6ZABhJ0bts2n+jmEPQbSd7awStwD9z/wt0XtcijwdAGgllyA2USa9Ofxwqgqme5eP4yHx9TCoCisCf6UUsR/AJ0uMntzyzUhhPkfsvtY/YEPcn+JvtA2KBO4ioBmZaQKQIlr+xwS95KdEvxDD9kltERPhDSSuBbw73Wg+gN1SZAsSt0S7Ikf0Z9mLP8ENKa6LTPz9dCRxbG2XsxDSTEStScZqQfyRHTYPZ2g8cZYMnksRMf4jC4tYqHdUpKEMlIuC+oCMtwnzfSic9sf9Pc9bPrUwOigPEBrVrYjvH8XYUPIHN9rqbHJTZlKr9Q0JfD8VvTaUfnaC3PfizKlmmg=
+#before_install:
+#  - echo $secret_passphrase | gpg --passphrase-fd 0 app/google-services.json.gpg
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-29.0.3
+    - android-29
+    - add-on
+    - extra
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
+    - "$HOME/.android/build-cache"
+script:
+  - "./gradlew test"
