@@ -3,4 +3,34 @@
     <string name="sign_in">Sign-In</string>
     <string name="sign_in_with_email">Sign in with email</string>
     <string name="terms_privacy_footer"><![CDATA[By continuing you are indicating that you accept our <a href="%1$s/docs/tos.html">Terms of Service</a> and <a href="%1$s/docs/privacy-policy.html">Privacy Policy</a>.]]></string>
+    <string name="trouble_signing_in">Trouble signing in?</string>
+    <string name="register">Register</string>
+    <string name="username">username</string>
+    <string name="helper_text_sign_in_username">email or username used when creating account</string>
+    <string name="password">password</string>
+    <string name="verify">Verify</string>
+    <string name="code_entry_hint">0</string>
+    <string name="account_verification">Verify Account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">name</string>
+    <string name="mobile_number">mobile number</string>
+    <string name="email">email</string>
+    <string name="username_required">username*</string>
+    <string name="email_required">email*</string>
+    <string name="password_required">password*</string>
+    <string name="cancel_request">cancel request</string>
+    <string name="reset_password">Reset password</string>
+    <string name="temporary_password">temporary password</string>
+    <string name="new_password">new password</string>
+    <string name="old_password">old password</string>
+    <string name="change_password">Change password</string>
+    <string name="zero">0</string>
+    <string name="timeunit">s</string>
+    <string name="password_reset_request">Password reset request</string>
+    <string name="submit">Submit</string>
+    <string name="helper_text_password_reset_request_email">used when creating account</string>
+    <string name="required_field">required field</string>
+    <string name="first_name">first name</string>
+    <string name="last_name">last name</string>
+    <string name="short_verification_code">Short verification code. Required length 6</string>
 </resources>

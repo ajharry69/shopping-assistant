@@ -2,4 +2,6 @@
 <resources>
     <dimen name="screen_edge_margin">16dp</dimen>
     <dimen name="logo_dimensions">100dp</dimen>
+    <!-- TODO: Rename to text_field_margin -->
+    <dimen name="til_bottom_margin">8dp</dimen>
 </resources>
