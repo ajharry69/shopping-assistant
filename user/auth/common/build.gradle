@@ -1,6 +1,5 @@
 apply plugin: "com.android.dynamic-feature"
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
