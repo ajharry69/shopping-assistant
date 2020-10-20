@@ -3,10 +3,8 @@ package com.xently.auth.provider
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -26,27 +24,19 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class AuthProviderFragment : Fragment() {
+class AuthProviderFragment : Fragment(R.layout.auth_provider_fragment) {
 
     private val viewModel: AuthProviderViewModel by viewModels()
     private var _binding: AuthProviderFragmentBinding? = null
     private val binding: AuthProviderFragmentBinding
         get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        _binding = AuthProviderFragmentBinding.inflate(inflater, container, false).apply {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = AuthProviderFragmentBinding.bind(view).apply {
             setupToolbar(toolbar)
             google.setStyle(SignInButton.SIZE_WIDE, SignInButton.COLOR_AUTO)
         }
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         val signInOptions =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
                 .requestIdToken(BuildConfig.GOOGLE_AUTH_SERVER_CLIENT_ID).build()
