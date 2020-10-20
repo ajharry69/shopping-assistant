@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_authentication"
+    app:startDestination="@id/dest_sign_in">
+    <fragment
+        android:id="@+id/dest_sign_in"
+        android:name="com.xently.auth.common.ui.signin.SigninFragment"
+        tools:layout="@layout/signin_fragment">
+        <!-- TODO: Add action to navigate to home -->
+        <action
+            android:id="@+id/action_sign_up"
+            app:destination="@id/dest_sign_up" />
+        <action
+            android:id="@+id/action_verification"
+            app:destination="@id/dest_verification" />
+        <action
+            android:id="@+id/action_request_password_reset"
+            app:destination="@id/dest_request_password_reset" />
+    </fragment>
+    <fragment
+        android:id="@+id/dest_sign_up"
+        android:name="com.xently.auth.common.ui.signup.SignupFragment"
+        tools:layout="@layout/signup_fragment" >
+        <action
+            android:id="@+id/action_verification"
+            app:destination="@id/dest_verification" />
+    </fragment>
+    <fragment
+        android:id="@+id/dest_verification"
+        android:name="com.xently.auth.common.ui.verification.VerificationFragment"
+        tools:layout="@layout/verification_fragment">
+        <!-- TODO: Add action to navigate to home -->
+    </fragment>
+    <fragment
+        android:id="@+id/dest_request_password_reset"
+        android:name="com.xently.auth.common.ui.password.reset.request.ResetPasswordRequestFragment"
+        tools:layout="@layout/reset_password_request_fragment">
+        <action
+            android:id="@+id/action_reset_password"
+            app:destination="@id/dest_reset_password" />
+    </fragment>
+    <fragment
+        android:id="@+id/dest_reset_password"
+        android:name="com.xently.auth.common.ui.password.reset.ResetPasswordFragment"
+        tools:layout="@layout/password_fragment">
+
+        <!-- TODO: Add action to navigate to home -->
+    </fragment>
+    <fragment
+        android:id="@+id/dest_change_password"
+        android:name="com.xently.auth.common.ui.password.change.ChangePasswordFragment"
+        tools:layout="@layout/password_fragment" />
+</navigation>
