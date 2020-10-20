@@ -75,8 +75,8 @@ android {
         pickFirst 'META-INF/LGPL2.1'
     }
     dynamicFeatures = [
-            ':user:auth:common',
-            ':user:profile',
+            ':account:auth:common',
+            ':account:profile',
     ]
 }
 
@@ -87,8 +87,8 @@ configurations.all {
 
 dependencies {
     api project(path: ':common')
-    implementation project(path: ':user:common')
-    implementation project(path: ':user:auth:provider')
+    implementation project(path: ':account:common')
+    implementation project(path: ':account:auth:provider')
     api project(path: ':data:models')
     api project(path: ':data:source:local')
     api project(path: ':data:source:remote')
