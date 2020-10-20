@@ -62,7 +62,7 @@ buildscript {
 
         library_version_code = 1
         library_version_name = '1.0.0'
-        library_min_sdk = 19
+        library_min_sdk = min_sdk_version
 
         bintray_org = properties.getProperty('BINTRAY_ORG')
         bintray_key = properties.getProperty('BINTRAY_API_KEY')
