@@ -4,6 +4,7 @@ import android.content.Context
 import com.xently.auth.common.ui.password.di.PasswordComponent
 import com.xently.auth.common.ui.signin.di.SigninComponent
 import com.xently.auth.common.ui.signup.di.SignupComponent
+import com.xently.auth.common.ui.verification.di.VerificationComponent
 import com.xently.common.di.modules.ViewModelFactoryModule
 import com.xently.shoppingassistant.di.AuthenticationModuleDependencies
 import dagger.BindsInstance
@@ -24,4 +25,5 @@ interface AuthenticationComponent {
     fun signinComponentFactory(): SigninComponent.Factory
     fun passwordComponentFactory(): PasswordComponent.Factory
     fun signupComponentFactory(): SignupComponent.Factory
+    fun verificationComponentFactory(): VerificationComponent.Factory
 }
