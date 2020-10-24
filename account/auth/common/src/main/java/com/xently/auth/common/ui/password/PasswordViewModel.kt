@@ -1,7 +1,9 @@
 package com.xently.auth.common.ui.password
 
-import androidx.lifecycle.ViewModel
+import com.xently.user.common.AbstractUserViewModel
+import com.xently.user.common.repository.AbstractUserRepository
 
-abstract class PasswordViewModel : ViewModel() {
+abstract class PasswordViewModel(private val repository: AbstractUserRepository) :
+    AbstractUserViewModel(repository) {
     // TODO: Implement the ViewModel
 }
