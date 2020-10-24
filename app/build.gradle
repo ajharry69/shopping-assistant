@@ -87,7 +87,7 @@ configurations.all {
 
 dependencies {
     api project(path: ':common')
-    implementation project(path: ':account:common')
+    api project(path: ':account:common')
     implementation project(path: ':account:auth:provider')
     api project(path: ':data:models')
     api project(path: ':data:source:local')
