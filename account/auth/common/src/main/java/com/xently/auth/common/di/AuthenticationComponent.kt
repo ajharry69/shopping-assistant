@@ -1,6 +1,7 @@
 package com.xently.auth.common.di
 
 import android.content.Context
+import com.xently.auth.common.ui.password.di.PasswordComponent
 import com.xently.auth.common.ui.signin.di.SigninComponent
 import com.xently.common.di.modules.ViewModelFactoryModule
 import com.xently.shoppingassistant.di.AuthenticationModuleDependencies
@@ -20,4 +21,5 @@ interface AuthenticationComponent {
     }
 
     fun signinComponentFactory(): SigninComponent.Factory
+    fun passwordComponentFactory(): PasswordComponent.Factory
 }
