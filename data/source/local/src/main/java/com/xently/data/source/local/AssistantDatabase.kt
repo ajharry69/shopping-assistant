@@ -8,7 +8,7 @@ import com.xently.data.source.local.RoomTypeConverters.StringListConverter
 import com.xently.data.source.local.daos.TokenDAO
 import com.xently.data.source.local.daos.UserDAO
 import com.xently.models.Token
-import com.xently.models.User
+import com.xently.models.user.User
 
 @Database(
     entities = [

@@ -1,8 +1,8 @@
 package com.xently.data.source.remote.services
 
 import com.xently.models.Token
-import com.xently.models.User
-import com.xently.models.UserWithPassword
+import com.xently.models.user.User
+import com.xently.models.user.UserWithPassword
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
@@ -64,7 +64,7 @@ interface UserService {
     suspend fun verifyAccount(@Field("code") verificationCode: String): Response<User>
 
     @POST("accounts/verification/request/")
-    suspend fun requestAccountVerification(): Response<Token>
+    suspend fun requestVerificationCode(): Response<Token>
 
     @POST("accounts/profile/{username}/photo/")
     suspend fun uploadPhoto(

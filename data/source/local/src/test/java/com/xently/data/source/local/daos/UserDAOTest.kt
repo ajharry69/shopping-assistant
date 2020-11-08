@@ -5,7 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import app.cash.turbine.test
 import com.xently.data.source.local.AssistantDatabase
 import com.xently.models.Token
-import com.xently.models.User
+import com.xently.models.user.User
 import com.xently.tests.unit.rules.MainCoroutineRule
 import com.xently.tests.unit.rules.RoomDatabaseRule
 import kotlinx.coroutines.test.runBlockingTest

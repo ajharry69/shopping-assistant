@@ -1,7 +1,8 @@
 package com.xently.models
 
-import com.xently.models.User.AuthProvider.EMAIL
-import com.xently.models.User.AuthProvider.GOOGLE
+import com.xently.models.user.User
+import com.xently.models.user.User.AuthProvider.EMAIL
+import com.xently.models.user.User.AuthProvider.GOOGLE
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

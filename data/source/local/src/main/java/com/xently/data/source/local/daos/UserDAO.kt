@@ -1,9 +1,9 @@
 package com.xently.data.source.local.daos
 
 import androidx.room.*
-import com.xently.models.DEFAULT_USER_ID
-import com.xently.models.User
-import com.xently.models.UserWithToken
+import com.xently.models.user.DEFAULT_USER_ID
+import com.xently.models.user.User
+import com.xently.models.user.UserWithToken
 import kotlinx.coroutines.flow.Flow
 
 @Dao

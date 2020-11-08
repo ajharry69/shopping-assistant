@@ -3,7 +3,7 @@ package com.xently.data.source.local
 import androidx.room.TypeConverter
 import com.google.gson.reflect.TypeToken
 import com.xently.common.utils.JSON_CONVERTER
-import com.xently.models.User.AuthProvider
+import com.xently.models.user.User.AuthProvider
 import java.util.*
 
 object RoomTypeConverters {
