@@ -5,5 +5,8 @@ import com.xently.user.common.repository.AbstractUserRepository
 
 abstract class PasswordViewModel(private val repository: AbstractUserRepository) :
     AbstractUserViewModel(repository) {
-    // TODO: Implement the ViewModel
+    fun resetPassword(oldPassword: String, newPassword: String, isChange: Boolean = false) =
+        repository.changeOrResetPassword(oldPassword, newPassword, isChange)
+
+    fun requestPasswordReset(email: String) = repository.requestPasswordReset(email)
 }
