@@ -79,6 +79,12 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     kapt "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
 
+    // Preferences DataStore
+    api "androidx.datastore:datastore-preferences:$datastore_version"
+
+    // Proto DataStore
+    api "androidx.datastore:datastore-core:$datastore_version"
+
     // Room
     kapt "androidx.room:room-compiler:$room_version"
 
