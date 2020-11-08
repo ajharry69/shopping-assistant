@@ -16,7 +16,7 @@ import com.xently.auth.provider.databinding.AuthProviderFragmentBinding
 import com.xently.common.data.TaskResult
 import com.xently.common.data.errorMessage
 import com.xently.common.utils.Log
-import com.xently.models.User
+import com.xently.models.user.User
 import com.xently.utilities.ui.fragments.Fragment
 import com.xently.utilities.viewext.*
 import dagger.hilt.android.AndroidEntryPoint

@@ -3,8 +3,8 @@ package com.xently.auth.provider
 import androidx.hilt.lifecycle.ViewModelInject
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.xently.common.data.TaskResult
-import com.xently.models.User
-import com.xently.models.UserWithPassword
+import com.xently.models.user.User
+import com.xently.models.user.UserWithPassword
 import com.xently.user.common.AbstractUserViewModel
 import com.xently.user.common.repository.AbstractUserRepository
 import kotlinx.coroutines.flow.Flow

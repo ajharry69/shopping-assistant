@@ -1,6 +1,6 @@
 package com.xently.auth.common.ui.signup
 
-import com.xently.models.UserWithPassword
+import com.xently.models.user.UserWithPassword
 import com.xently.user.common.AbstractUserViewModel
 import com.xently.user.common.repository.AbstractUserRepository
 import java.io.File
