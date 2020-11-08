@@ -4,8 +4,8 @@ import android.util.Base64
 import com.xently.common.data.source.remote.AbstractRemoteDataSource
 import com.xently.common.di.qualifiers.coroutines.IODispatcher
 import com.xently.data.source.remote.services.UserService
-import com.xently.models.User
-import com.xently.models.UserWithPassword
+import com.xently.models.user.User
+import com.xently.models.user.UserWithPassword
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -47,4 +47,30 @@ class UserRemoteDataSource @Inject constructor(
     }
 
     override fun signOut() = flow { emit(sendRequest { service.signOut() }) }
+
+    override fun changeOrResetPassword(
+        oldPassword: String,
+        newPassword: String,
+        isChange: Boolean,
+    ) = flow {
+        emit(sendRequest {
+            if (isChange) {
+                service.changePassword(oldPassword, newPassword)
+            } else {
+                service.resetPassword(oldPassword, newPassword)
+            }
+        })
+    }
+
+    override fun requestPasswordReset(email: String) = flow {
+        emit(sendRequest { service.resetPasswordRequest(email) })
+    }
+
+    override fun verifyAccount(verificationCode: String) = flow {
+        emit(sendRequest { service.verifyAccount(verificationCode) })
+    }
+
+    override fun requestVerificationCode() = flow {
+        emit(sendRequest { service.requestVerificationCode() })
+    }
 }
