@@ -446,4 +446,4 @@ fun ImageView.setImageFromPath(imagePath: String) {
     }
 }
 
-fun EditText.textAsString(): String? = text.let { if (it.isNullOrBlank()) null else it.toString() }
+fun EditText.asString(): String? = text.let { if (it.isNullOrBlank()) null else it.toString() }

@@ -3,10 +3,10 @@ package com.xently.common.utils
 import com.google.android.material.textfield.TextInputLayout
 import com.xently.common.R
 import com.xently.utilities.viewext.setErrorTextAndFocus
-import com.xently.utilities.viewext.textAsString
+import com.xently.utilities.viewext.asString
 
 fun TextInputLayout.showErrorOnInvalidNumber(threshold: Float = 0f): Float? {
-    val number = editText?.textAsString()?.toFloatOrNull()
+    val number = editText?.asString()?.toFloatOrNull()
     if (number == null) {
         setErrorTextAndFocus(R.string.invalid_number)
         return null
@@ -19,7 +19,7 @@ fun TextInputLayout.showErrorOnInvalidNumber(threshold: Float = 0f): Float? {
 }
 
 fun TextInputLayout.showErrorOnNullOrBlankString(): String? {
-    val value = editText?.textAsString()
+    val value = editText?.asString()
     if (value.isNullOrBlank()) {
         setErrorTextAndFocus(R.string.required_field)
         return null
