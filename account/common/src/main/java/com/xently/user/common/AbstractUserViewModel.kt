@@ -1,7 +1,7 @@
 package com.xently.user.common
 
 import androidx.lifecycle.ViewModel
-import com.xently.models.DEFAULT_USER_ID
+import com.xently.models.user.DEFAULT_USER_ID
 import com.xently.user.common.repository.AbstractUserRepository
 import kotlinx.coroutines.flow.Flow
 
