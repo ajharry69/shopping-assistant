@@ -6,5 +6,7 @@ import javax.inject.Inject
 
 class VerificationViewModel @Inject constructor(private val repository: AbstractUserRepository) :
     AbstractUserViewModel(repository) {
-    // TODO: Implement the ViewModel
+    fun verifyAccount(verificationCode: String) = repository.verifyAccount(verificationCode)
+
+    fun requestVerificationCode() = repository.requestVerificationCode()
 }
