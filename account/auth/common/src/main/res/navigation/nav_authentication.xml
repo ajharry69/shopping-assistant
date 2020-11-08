@@ -22,10 +22,15 @@
     <fragment
         android:id="@+id/dest_sign_up"
         android:name="com.xently.auth.common.ui.signup.SignupFragment"
-        tools:layout="@layout/signup_fragment" >
+        tools:layout="@layout/signup_fragment">
         <action
             android:id="@+id/action_verification"
             app:destination="@id/dest_verification" />
+        <argument
+            android:name="user"
+            app:argType="com.xently.models.user.UserWithPassword"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/dest_verification"
@@ -40,6 +45,11 @@
         <action
             android:id="@+id/action_reset_password"
             app:destination="@id/dest_reset_password" />
+        <argument
+            android:name="email"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/dest_reset_password"
