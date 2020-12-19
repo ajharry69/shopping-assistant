@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import app.cash.turbine.test
 import com.xently.data.source.local.AssistantDatabase
-import com.xently.models.Token
 import com.xently.models.user.User
 import com.xently.tests.unit.rules.MainCoroutineRule
 import com.xently.tests.unit.rules.RoomDatabaseRule
@@ -57,29 +56,6 @@ class UserDAOTest {
             // Get user with un-existing id
             getUser(user.id + 1).test {
                 assertNull(expectItem())
-            }
-        }
-    }
-
-    @Test
-    fun getUserWithToken() = runBlockingTest {
-        with(databaseRule.database) {
-            val user = User()
-            userDAO.run {
-                getUserWithToken(user.id).test {
-                    assertNull(expectItem())
-                }
-                // No token has been attached to user
-                addUser(user)
-                getUserWithToken(user.id).test {
-                    assertEquals(true, expectError() is NullPointerException)
-                }
-
-                // Attach token to user
-                tokenDAO.addToken(Token("abc", id = user.id))
-                getUserWithToken(user.id).test {
-                    assertEquals("abc", expectItem()!!.user.token.access)
-                }
             }
         }
     }

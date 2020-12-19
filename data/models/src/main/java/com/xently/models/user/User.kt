@@ -7,6 +7,7 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.xently.common.utils.Exclude
 import com.xently.models.Token
+import com.xently.models.UserConversion
 
 const val DEFAULT_USER_ID = 1L
 
@@ -27,7 +28,7 @@ data class User(
     @Exclude(Exclude.During.SERIALIZATION)
     @PrimaryKey(autoGenerate = false)
     var id: Long = DEFAULT_USER_ID,
-) : Parcelable {
+) : Parcelable, UserConversion {
     val name: String?
         get() = if (firstName.isNullOrBlank() && lastName.isNullOrBlank()) {
             null
@@ -66,11 +67,13 @@ data class User(
         }
     }
 
+    override fun toUserWithPassword() = super.toUserWithPassword().copy(user = this)
+
     override fun describeContents(): Int = 0
 
     companion object CREATOR : Parcelable.Creator<User> {
-        override fun createFromParcel(parcel: Parcel): User = User(parcel)
 
+        override fun createFromParcel(parcel: Parcel): User = User(parcel)
         override fun newArray(size: Int): Array<User?> = arrayOfNulls(size)
     }
 }

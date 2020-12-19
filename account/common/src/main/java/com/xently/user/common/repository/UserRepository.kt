@@ -51,7 +51,7 @@ class UserRepository @Inject constructor(
     ) = remote.changeOrResetPassword(oldPassword, newPassword, isChange).flatMapLatest {
         flow {
             if (it.data == null) emit(it)
-            else emitAll(local.signUp(UserWithPassword(it.data!!)))
+            else emitAll(local.signUp(it.data!!.toUserWithPassword()))
         }
     }.whileLoading(ioDispatcher)
 
@@ -76,6 +76,6 @@ class UserRepository @Inject constructor(
 
     private fun TaskResult<User>.signUpFlow(): Flow<TaskResult<User>> = flow {
         if (data == null) emit(this@signUpFlow)
-        else emitAll(local.signUp(UserWithPassword(data!!)))
+        else emitAll(local.signUp(data!!.toUserWithPassword()))
     }
 }

@@ -84,6 +84,7 @@ dependencies {
 
     // Proto DataStore
     api "androidx.datastore:datastore-core:$datastore_version"
+    api 'com.google.protobuf:protobuf-javalite:3.14.0'
 
     // Room
     kapt "androidx.room:room-compiler:$room_version"

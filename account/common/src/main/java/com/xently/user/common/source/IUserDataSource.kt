@@ -11,7 +11,9 @@ import java.io.File
 interface IUserDataSource {
     fun getUser(id: Long = DEFAULT_USER_ID): Flow<User?>
 
-    fun signIn(username: String, password: String): Flow<TaskResult<User>>
+    fun signIn(username: String, password: String): Flow<TaskResult<User>> {
+        TODO("Not yet implemented")
+    }
 
     fun signUp(user: UserWithPassword, photo: File? = null): Flow<TaskResult<User>>
 
@@ -21,11 +23,19 @@ interface IUserDataSource {
         oldPassword: String,
         newPassword: String,
         isChange: Boolean = false,
-    ): Flow<TaskResult<User?>>
+    ): Flow<TaskResult<User?>> {
+        TODO("Not yet implemented")
+    }
 
-    fun requestPasswordReset(email: String): Flow<TaskResult<Token>>
+    fun requestPasswordReset(email: String): Flow<TaskResult<Token>> {
+        TODO("Not yet implemented")
+    }
 
-    fun verifyAccount(verificationCode: String): Flow<TaskResult<User>>
+    fun verifyAccount(verificationCode: String): Flow<TaskResult<User>> {
+        TODO("Not yet implemented")
+    }
 
-    fun requestVerificationCode(): Flow<TaskResult<Token>>
+    fun requestVerificationCode(): Flow<TaskResult<Token>> {
+        TODO("Not yet implemented")
+    }
 }

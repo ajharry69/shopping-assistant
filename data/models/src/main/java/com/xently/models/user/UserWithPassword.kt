@@ -3,7 +3,7 @@ package com.xently.models.user
 import android.os.Parcel
 import android.os.Parcelable
 
-data class UserWithPassword(val user: User, val password: String = "") : Parcelable {
+data class UserWithPassword(val user: User = User(), val password: String = "") : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readParcelable(User::class.java.classLoader)!!,
         parcel.readString()!!)

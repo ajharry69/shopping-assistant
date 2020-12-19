@@ -9,6 +9,7 @@ import com.xently.common.utils.Exclude
 import com.xently.common.utils.web.AuthScheme
 import com.xently.common.utils.web.AuthScheme.BEARER
 import com.xently.models.user.DEFAULT_USER_ID
+import com.xently.models.user.User
 
 const val DEFAULT_TOKEN_ID = DEFAULT_USER_ID
 
@@ -22,13 +23,15 @@ data class Token(
     @Exclude
     @Ignore
     val scheme: AuthScheme = BEARER,
-) : Parcelable {
+) : Parcelable, UserConversion {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readLong(),
         AuthScheme.valueOf(parcel.readString() ?: BEARER.name),
     )
+
+    override fun toUserWithPassword() = super.toUserWithPassword().copy(user = User(token = this))
 
     override fun toString(): String = "$scheme $access"
 
